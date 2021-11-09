@@ -3,18 +3,24 @@ package com.desafio.desafio;
 import com.desafio.desafio.entites.Cliente;
 import com.desafio.desafio.services.ClienteService;
 import java.util.ArrayList;
-import java.util.List;
+//import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import com.desafio.desafio.entites.Contrato;
+
+import java.sql.Date;
+import java.util.List;
+
 @SpringBootApplication
 public class DesafioApplication implements CommandLineRunner {
 
     @Autowired
     private ClienteService clienteService;
+
 
     public static void main(String[] args) {
         SpringApplication.run(DesafioApplication.class, args);
@@ -23,7 +29,6 @@ public class DesafioApplication implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-   
         Cliente cliente1 = new Cliente();
         cliente1.setNombre("Maria");
         cliente1.setPrimerApellido("Ruiz");
@@ -51,8 +56,9 @@ public class DesafioApplication implements CommandLineRunner {
         List<Cliente> listaClientes = new ArrayList<>();
         listaClientes = clienteService.listarClientes();
         for (int i = 0; i < listaClientes.size(); i++) {
-            System.out.println("Cliente" + (i+1) + listaClientes.get(i).getNombre());
+            System.out.println("Cliente" + (i + 1) + listaClientes.get(i).getNombre());
         }
+ 
 
     }
 

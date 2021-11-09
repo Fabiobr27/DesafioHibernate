@@ -12,7 +12,7 @@ public class ClienteDaoImpl implements ClienteDaoI {
 
     @Autowired
     private EntityManager entityManager;
-    //private List<Cliente> resultList;
+    
 
     @Override
     public void insertar(Cliente cliente) {
@@ -37,6 +37,7 @@ public class ClienteDaoImpl implements ClienteDaoI {
         session.close();
         return listaClientes;
     }
+    
 
     @Override
     public Cliente BuscarId(Long idCliente) {
